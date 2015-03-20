@@ -1,0 +1,113 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+                <Table
+
+                                inset="false"
+
+                                items="{
+
+                                                path: 'odata>/COGS',
+
+                                                sorter: {
+
+                                                                path: 'BUSINESS_UNIT_CODE'
+
+                                                }
+
+                                }">
+
+                                <columns>
+										<Column>
+
+                                                                <Text text="Business Unit" />
+
+                                                </Column>
+                                                <Column>
+
+                                                                <Text text="Shipping QTY" />
+
+                                                </Column>
+
+                                                <Column
+
+                                                                minScreenWidth="Tablet"
+
+                                                                demandPopin="true">
+
+                                                                <Text text="Sales AMT" />
+
+                                                </Column>
+
+                                                <Column
+
+                                                                minScreenWidth="Tablet"
+
+                                                                demandPopin="true"
+
+                                                                hAlign="Right">
+
+                                                                <Text text="COGS" />
+
+                                                </Column>
+
+                                                <Column
+
+                                                                minScreenWidth="Tablet"
+
+                                                                demandPopin="true"
+
+                                                                hAlign="Center">
+
+                                                                <Text text="Stock QTY" />
+
+                                                </Column>
+
+                                                <Column
+
+                                                                hAlign="Right">
+
+                                                                <Text text="Stock AMT" />
+
+                                                </Column>
+
+                                </columns>
+
+                                <items>
+
+                                                <ColumnListItem>
+
+                                                                <cells>
+
+                                                                                <Text
+
+                                                                                                text="{odata>BUSINESS_UNIT_CODE}" />
+
+                                                                                <Text
+
+                                                                                                text="{odata>SHIPPING_QTY}" />
+
+                                                                                <Text
+
+                                                                                                text="{odata>SALES_AMT}" />
+
+                                                                                                <Text
+
+                                                                                                text="{odata>COGS}" />
+
+                                                                                                <Text
+
+                                                                                                text="{odata>STOCK_QTY}" />
+
+                                                                                                <Text
+
+                                                                                                text="{odata>STOCK_AMT}" />
+
+                                                                </cells>
+
+                                                </ColumnListItem>
+
+                                </items>
+
+                </Table>
+
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+<core:View xmlns:core="sap.ui.core" xmlns:custom="sap.mtk.poc.IGA.control"
+	xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:table="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="sap.mtk.poc.IGA.view.root">
+
+	<Page title="Inventory Analysis Guides" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<Button text="header content"></Button>
+		</headerContent>
+		<content>
+			<custom:Container id="rootContainer"></custom:Container>
+		</content>
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<Toolbar id="steps" press="onStepPressed" active="true">
+						<Button type="Default" id="step1" class="selected" text="Identify Root Cause" press="onStepPressed"/>
+						<core:Icon src="sap-icon://step"></core:Icon>
+						<Button type="Default" id="step2" text="Ideas" press="onStepPressed"></Button>
+						<core:Icon src="sap-icon://step"></core:Icon>
+						<Button type="Default" id="step3" text="Actions" press="onStepPressed"></Button>
+					</Toolbar>
+				</contentLeft>
+			</Bar>
+	      
+	    </subHeader>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="btnProdListShare" icon="sap-icon://action"  press="onSharePressed"  />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

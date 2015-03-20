@@ -1,0 +1,47 @@
+<core:View xmlns:core="sap.ui.core"
+
+                xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:table="sap.ui.table"
+
+                xmlns:mvc="sap.ui.core.mvc"
+
+                xmlns:custom="sap.mtk.poc.IGA.control"
+
+                xmlns:suite="sap.suite.ui.commons"
+
+                controllerName="sap.mtk.poc.IGA.view.identityRootCause.statusHighlight" height="100%">
+
+ 
+
+                <custom:Container id="tiles"></custom:Container>
+
+                <custom:Container>
+
+                                <Bar>
+
+                                                <contentLeft>
+
+                                                                <Text text="Inventory Status"></Text>
+
+                                                </contentLeft>
+
+                                                <contentRight>
+
+                                                                <Button icon="sap-icon://table-chart" press="showTable"></Button>
+
+                                                                <Button icon="sap-icon://vertical-bar-chart" press="showChart"></Button>
+
+                                                                <Button icon="sap-icon://full-screen" press="showFullScreen"></Button>
+
+                                                </contentRight>
+
+                                </Bar>
+
+                </custom:Container>
+
+                <custom:Container id="smartTableContnetContainer" class="smartTableContnetContainer">
+
+                                <core:Fragment fragmentName="sap.mtk.poc.IGA.view.fragment.table" type="XML"></core:Fragment>
+
+                </custom:Container>
+
+</core:View>

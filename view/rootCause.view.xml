@@ -1,0 +1,40 @@
+<core:View xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:custom="sap.mtk.poc.IGA.control" 
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table"
+	controllerName="sap.mtk.poc.IGA.view.rootCause">
+	<IconTabBar
+		id="tabBar"
+		select="onTabBarClick"
+		expanded="true"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				icon="sap-icon://begin"
+				iconColor="Positive"
+				text="Status Highlight"
+				key="hightlight">
+				<!--  <mvc:JSView viewName="sap.mtk.poc.IGA.view.identityRootCause.statusHighlight"></mvc:JSView>	-->
+				<mvc:XMLView viewName="sap.mtk.poc.IGA.view.identityRootCause.statusHighlight"></mvc:XMLView>				
+			</IconTabFilter>
+			<IconTabSeparator icon="sap-icon://open-command-field" />
+			<IconTabFilter
+				icon="sap-icon://compare"
+				iconColor="Critical"
+				text="WIP Analysis"
+				key="wip" >
+				<mvc:XMLView viewName="sap.mtk.poc.IGA.view.identityRootCause.wip"></mvc:XMLView>					
+			</IconTabFilter>
+			<IconTabSeparator icon="sap-icon://open-command-field" />
+			<IconTabFilter
+				icon="sap-icon://inventory"
+				iconColor="Negative"
+				text="FCST Analysis"
+				key="fcst">
+				<mvc:XMLView viewName="sap.mtk.poc.IGA.view.identityRootCause.fcstAnalysis"></mvc:XMLView>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+</core:View>
