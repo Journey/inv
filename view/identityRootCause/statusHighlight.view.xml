@@ -13,11 +13,11 @@
  
 
                 <custom:Container id="tiles"></custom:Container>
+                <custom:Container id="smartTableContainer">
+                        <custom:Container id="smartTable">
+                                <custom:Container>
 
-                <custom:Container>
-
-                                <Bar>
-
+                                        <Bar>
                                                 <contentLeft>
 
                                                                 <Text text="Inventory Status"></Text>
@@ -26,22 +26,21 @@
 
                                                 <contentRight>
 
-                                                                <Button icon="sap-icon://table-chart" press="showTable"></Button>
+                                                                <Button icon="sap-icon://table-chart" type="{custom>/type/table}" press="showTable"></Button>
 
-                                                                <Button icon="sap-icon://vertical-bar-chart" press="showChart"></Button>
+                                                                <Button icon="sap-icon://vertical-bar-chart" type="{custom>/type/chart}"  press="showChart"></Button>
 
-                                                                <Button icon="sap-icon://full-screen" press="showFullScreen"></Button>
+                                                                <Button icon="sap-icon://full-screen" type="{custom>/type/fullScreen}" press="toggleFullScreen"></Button>
 
                                                 </contentRight>
-
-                                </Bar>
-
+                                        </Bar>
+                                </custom:Container>
+                                <custom:Container id="smartTableContnetContainer" class="customTableContainer">
+                                                <core:Fragment fragmentName="sap.mtk.poc.IGA.view.fragment.table" type="XML"></core:Fragment>
+                                </custom:Container>
+                        </custom:Container>
                 </custom:Container>
-
-                <custom:Container id="smartTableContnetContainer" class="smartTableContnetContainer">
-
-                                <core:Fragment fragmentName="sap.mtk.poc.IGA.view.fragment.table" type="XML"></core:Fragment>
-
-                </custom:Container>
+                
+                
 
 </core:View>

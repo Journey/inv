@@ -16,6 +16,11 @@ sap.ui.core.mvc.Controller.extend("sap.mtk.poc.IGA.view.root", {
 		this._eventBus.subscribe("root","tabselect",function(sChannelId,sEventId,oData){
 			this.selectTab(oData.key);
 		}, this);
+
+		this._eventBus.subscribe("root","open-full",function(sChannelId,sEventId,oContent){
+			this.oFullScreenContent = oContent;
+			this.byId("fullscreenContainer").addContent(oContent);;
+		}, this);
 	},
 
 	_onRoutePatternMatched: function(oEvent){

@@ -7,13 +7,14 @@ sap.ui.core.mvc.Controller.extend("sap.mtk.poc.IGA.view.identityRootCause.status
                
 
                 onInit: function() {
-
-                                //this.initSmartTable();
-                	this.createTiles();
+                	//this.createTiles();
                 	this.smartTableContnetContainer = this.byId("smartTableContnetContainer");
+                    this.smartTableContainer = this.byId("smartTableContainer");
+                    this.smartTable = this.byId("smartTable");
                 	this.initCustomeModel();
-                                
 
+                    this._oComponent = this.getOwnerComponent();
+                    this._eventBus = this._oComponent.getEventBus();
                 },
                 
                 createTiles: function(){
@@ -106,7 +107,8 @@ sap.ui.core.mvc.Controller.extend("sap.mtk.poc.IGA.view.identityRootCause.status
 
                                                     fullScreen:"Default"
 
-                                    }
+                                    },
+                                    isFullScreen: false
 
                     }
 
@@ -208,14 +210,23 @@ sap.ui.core.mvc.Controller.extend("sap.mtk.poc.IGA.view.identityRootCause.status
 
     },
 
+    toggleFullScreen:function () {
+        if(this.customModel.getProperty("/isFullScreen")){
+            this.customModel.setProperty("/isFullScreen", false)
+            this.smartTable.removeStyleClass("full");
+            this.smartTableContainer.addContent( this.smartTable );
+        }
+        else{
+            this.customModel.setProperty("/isFullScreen", true);
+            this.smartTable.addStyleClass("full");
+            this.smartTableReposition();
+        }
 
 
-    showFullScreen: function(){
+    },
 
-                    this.smartTableContnetContainer.addStyleClass("full");
-
-
-
+    smartTableReposition: function(){
+        this._eventBus.publish("root","open-full", this.smartTable);
     }
 
 

@@ -1,3 +1,22 @@
 .selected{
 	color: #009de0;
 }
+.container.full{
+	position: absolute;
+	border: 12px solid #ccc;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	z-index: 200;
+}
+.customTableContainer .full-icon{
+	display: none;
+}
+.customTableContainer.full .full-icon{
+	position: fixed;
+	top: 18px;
+	left: 19px;
+	display: block;
+}
