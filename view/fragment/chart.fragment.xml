@@ -1,29 +1,19 @@
 <core:FragmentDefinition
-
   xmlns="sap.m"
-
   xmlns:viz="sap.viz.ui5"
-
   xmlns:core="sap.ui.core">
 
-  <viz:controls.VizFrame uiConfig="{applicationSet:'fiori'}" vizType="column" width="100%" height="700px">
-
+  <viz:controls.VizFrame uiConfig="{applicationSet:'fiori'}" vizType="column" width="100%" height="100%">
     <viz:dataset>
-
         <viz:data.FlattenedDataset data="{odata>/COGS}">
 
             <viz:dimensions>
-
                 <viz:data.DimensionDefinition name="Business Unit Code" value="{odata>BUSINESS_UNIT_CODE}"></viz:data.DimensionDefinition>
-
             </viz:dimensions>
 
             <viz:measures>
-
                 <viz:data.MeasureDefinition name="COGS" value="{path:'odata>COGS'}"></viz:data.MeasureDefinition>
-
                 <viz:data.MeasureDefinition name="Sales Amount" value="{path:'odata>SALES_AMT'}"></viz:data.MeasureDefinition>
-
             </viz:measures>
 
         </viz:data.FlattenedDataset>

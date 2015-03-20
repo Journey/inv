@@ -9,6 +9,7 @@
 		id="tabBar"
 		select="onTabBarClick"
 		expanded="true"
+		stretchContentHeight="true"
 		class="sapUiResponsiveContentPadding">
 		<items>
 			<IconTabFilter
@@ -17,7 +18,7 @@
 				text="Status Highlight"
 				key="hightlight">
 				<!--  <mvc:JSView viewName="sap.mtk.poc.IGA.view.identityRootCause.statusHighlight"></mvc:JSView>	-->
-				<mvc:XMLView viewName="sap.mtk.poc.IGA.view.identityRootCause.statusHighlight"></mvc:XMLView>				
+				<mvc:XMLView viewName="sap.mtk.poc.IGA.view.identityRootCause.statusHighlight" height="100%"></mvc:XMLView>				
 			</IconTabFilter>
 			<IconTabSeparator icon="sap-icon://open-command-field" />
 			<IconTabFilter

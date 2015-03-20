@@ -11,36 +11,38 @@
                 controllerName="sap.mtk.poc.IGA.view.identityRootCause.statusHighlight" height="100%">
 
  
+        <l:FixFlex class="ofixFlexVertical">
+                <l:fixContent>
+                        <custom:Container id="tiles"></custom:Container>
+                </l:fixContent>
+                <l:fixContent>
+                        <custom:Container id="smartTableContainer" height="100%">
+                                <custom:Container id="smartTable" height="100%">
+                                        <custom:Container>
+                                                <Bar>
+                                                        <contentLeft>
 
-                <custom:Container id="tiles"></custom:Container>
-                <custom:Container id="smartTableContainer">
-                        <custom:Container id="smartTable">
-                                <custom:Container>
+                                                                        <Text text="Inventory Status"></Text>
 
-                                        <Bar>
-                                                <contentLeft>
+                                                        </contentLeft>
 
-                                                                <Text text="Inventory Status"></Text>
+                                                        <contentRight>
 
-                                                </contentLeft>
+                                                                        <Button icon="sap-icon://table-chart" type="{custom>/type/table}" press="showTable"></Button>
 
-                                                <contentRight>
+                                                                        <Button icon="sap-icon://vertical-bar-chart" type="{custom>/type/chart}"  press="showChart"></Button>
 
-                                                                <Button icon="sap-icon://table-chart" type="{custom>/type/table}" press="showTable"></Button>
+                                                                        <Button icon="sap-icon://full-screen" type="{custom>/type/fullScreen}" press="toggleFullScreen"></Button>
 
-                                                                <Button icon="sap-icon://vertical-bar-chart" type="{custom>/type/chart}"  press="showChart"></Button>
-
-                                                                <Button icon="sap-icon://full-screen" type="{custom>/type/fullScreen}" press="toggleFullScreen"></Button>
-
-                                                </contentRight>
-                                        </Bar>
-                                </custom:Container>
-                                <custom:Container id="smartTableContnetContainer" class="customTableContainer">
-                                                <core:Fragment fragmentName="sap.mtk.poc.IGA.view.fragment.table" type="XML"></core:Fragment>
+                                                        </contentRight>
+                                                </Bar>
+                                        </custom:Container>
+                                        <custom:Container id="smartTableContnetContainer" class="customTableContainer" height="90%">
+                                                        <core:Fragment fragmentName="sap.mtk.poc.IGA.view.fragment.table" type="XML"></core:Fragment>
+                                        </custom:Container>
                                 </custom:Container>
                         </custom:Container>
-                </custom:Container>
-                
-                
+                </l:fixContent>
+        </l:FixFlex>        
 
 </core:View>
